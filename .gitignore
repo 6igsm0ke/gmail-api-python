@@ -10,6 +10,7 @@ env/
 Lib/
 Scripts/
 Include/
+.env
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
