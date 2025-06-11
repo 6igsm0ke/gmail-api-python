@@ -69,17 +69,20 @@ def auto_reply_to_last_email():
         reply_text = generate_gemini_reply(plain_text)
 
     print(f"\n🤖 Reply:\n{reply_text}\n")
+    confirm = input("Do you want to send this reply? (yes/no): ").strip().lower()
+    if confirm in ['yes', 'y']:
+        sender_match = re.search(r"<(.+?)>", msg_details["sender"])
+        sender_email = sender_match.group(1) if sender_match else msg_details["sender"]
 
-    sender_match = re.search(r"<(.+?)>", msg_details["sender"])
-    sender_email = sender_match.group(1) if sender_match else msg_details["sender"]
-
-    send_email(
-        service,
-        to=sender_email,
-        subject="Re: " + msg_details["subject"],
-        body=reply_text
-    )
-    print("Reply sent!")
+        send_email(
+            service,
+            to=sender_email,
+            subject="Re: " + msg_details["subject"],
+            body=reply_text
+        )
+        print("Reply sent!")
+    else:
+        print("Reply cancelled.")
 
 if __name__ == "__main__":
     auto_reply_to_last_email()

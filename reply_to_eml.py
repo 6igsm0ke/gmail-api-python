@@ -38,14 +38,19 @@ def reply_to_eml(eml_path):
     reply = generate_gemini_reply(body)
 
     service = init_gmail_service("client-secret.json")
-    send_email(
-        service,
-        to=sender,
-        subject="Re: " + subject,
-        body=reply
-    )
+    confirm = input("Do you want to send the reply? (yes/no): ").strip().lower()
+    if confirm in ['yes', 'y']:
+        
+        send_email(
+            service,
+            to=sender,
+            subject="Re: " + subject,
+            body=reply
+        )
 
-    print("Reply sent!")
+        print("Reply sent!")
+    else:
+        print("Reply cancelled.")
 
 
 if __name__ == "__main__":
