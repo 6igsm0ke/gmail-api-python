@@ -7,7 +7,7 @@ This project automatically replies to the most recent Gmail message using the **
 * 📩 Reads the latest email from your Gmail inbox
 * 🔁 Automatically generates a response using Gemini 1.5 Flash
 * ✍️ Sends a reply to the sender
-* 📎 Parses `.docx` and `.xlsx` attachments (if present)
+* 📎 Parses `.docx`,`.xlsx`,`.csv` and can open `.jpeg`, `.jpg`, `.png` attachments (if present)
 * 📨 Supports standalone `.eml` files as input
 
 ## 🛠️ Setup Instructions
@@ -54,7 +54,7 @@ Reads a local `.eml` file and replies to the sender using Gmail API.
 * `gemini_helper.py`: wraps Gemini API calls
 * `gmail_api.py`: initializes Gmail API
 * `send_email.py`: handles sending email via Gmail API
-* `utils.py`: reads `.docx`, `.xlsx` attachments
+* `utils.py`: reads `.docx`, `.xlsx`, `.csv` attachments
 
 ## ✅ Usage
 
@@ -74,8 +74,7 @@ Then provide the path to your `.eml` file.
 
 ## 📝 Notes
 
-Currently, the parser supports `.docx` and `.xlsx` attachments only.  
-Other file types (like `.pdf`, `.csv`, `.txt`) can be supported in the future by adding specific parsing logic.  
+Currently, the parser supports `.docx`,`.xlsx`,`.csv`, `.jpeg`, `.jpg`, `.png` attachments only.  
 
 Due to token limits of Gemini 1.5 Flash, large or binary files need to be preprocessed before sending to the model.
 
