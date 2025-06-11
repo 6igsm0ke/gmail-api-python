@@ -72,6 +72,13 @@ python reply_from_eml.py
 
 Then provide the path to your `.eml` file.
 
+## 📝 Notes
+
+Currently, the parser supports `.docx` and `.xlsx` attachments only.  
+Other file types (like `.pdf`, `.csv`, `.txt`) can be supported in the future by adding specific parsing logic.  
+
+Due to token limits of Gemini 1.5 Flash, large or binary files need to be preprocessed before sending to the model.
+
 ## 📚 Requirements
 
 See `requirements.txt`.
