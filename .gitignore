@@ -1,0 +1,38 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+.pyc
+
+# Virtual environment
+venv/
+env/
+Lib/
+Scripts/
+Include/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# macOS / Linux / Windows system files
+.DS_Store
+Thumbs.db
+
+# Token and credential files
+client_secret.json
+token files/
+*.json
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.swp
+
+# IDE/project config files
+.vscode/
+.idea/
+*.code-workspace
+
+# EML or test data (optional)
+*.eml
