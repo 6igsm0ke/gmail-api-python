@@ -15,7 +15,7 @@ This project automatically replies to the most recent Gmail message using the **
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/gmail-api-python.git
+git clone https://github.com/6igsm0ke/gmail-api-python.git
 cd gmail-api-python
 ```
 
